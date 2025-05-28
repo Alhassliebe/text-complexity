@@ -1,0 +1,15 @@
+conllu
+udapi
+natasha
+razdel
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+scikit-learn
+umap-learn
+tqdm
+minio
+setuptools 
+pymorphy2-dicts-ru

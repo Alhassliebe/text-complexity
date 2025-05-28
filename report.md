@@ -1,0 +1,1130 @@
+# Описание эксперимента и результаты кластеризации
+
+## 1. Методология
+
+Анализ выполнялся с использованием скрипта `macro_level_analysis.py`, в котором реализованы этапы:
+
+- Загрузка метрик микроанализа по сегментам (10 и 100 предложений);
+- Агрегация метрик и предобработка (нормализация, устранение пропусков);
+- Снижение размерности (t-SNE, UMAP);
+- Кластеризация (K-means, иерархическая);
+- Оценка кластеризации (гомогенность, полнота, ARI);
+- Визуализация результатов.
+
+## 2. Результаты кластеризации
+
+### 2.1 Сегменты по 10 предложениям
+
+### Общая информация
+- Количество текстов: 201
+- Author: Абгарян, Акунин, Алешковский, Астафьев, Беляев, Бонч-Осмоловская, Бушков, Быков, Власова, Войнович, Гельб, Гранин, Грекова, Довлатов, Домбровский, Достоевский, Лермонтов, Лукьяненко, Макушинский, Маринина, Мошков, Преображенский, Прокофьева, Пушкин, Регентов, Сальников, Степнова, Стругацкие, Толстой, Хоффман, Черкасова, Шушпанов, Экслер
+- Количество кластеров (kmeans): 2
+- Количество кластеров (hierarchical): 2
+
+### Результаты метода kmeans
+
+#### Оценка кластеризации по author
+- Гомогенность: 0.1016
+- Полнота: 0.6929
+- Скорректированный индекс Рэнда: 0.0189
+
+#### Состав кластеров по author (kmeans)
+
+##### Кластер 0
+- Размер: 161 текстов
+- Доминирующая группа: Акунин (6.2%)
+- Состав:
+  - Акунин: 6.2%
+  - Беляев: 6.2%
+  - Маринина: 6.2%
+  - Бушков: 5.6%
+  - Быков: 5.6%
+  - Домбровский: 5.0%
+  - Грекова: 5.0%
+  - Лукьяненко: 5.0%
+  - Стругацкие: 5.0%
+  - Довлатов: 4.3%
+  - Черкасова: 3.7%
+  - Гранин: 3.7%
+  - Абгарян: 3.1%
+  - Алешковский: 3.1%
+  - Хоффман: 3.1%
+  - Мошков: 3.1%
+  - Регентов: 3.1%
+  - Войнович: 3.1%
+  - Бонч-Осмоловская: 2.5%
+  - Экслер: 2.5%
+  - Гельб: 2.5%
+  - Преображенский: 2.5%
+  - Прокофьева: 2.5%
+  - Шушпанов: 1.9%
+  - Власова: 1.9%
+  - Достоевский: 1.2%
+  - Пушкин: 1.2%
+  - Лермонтов: 0.6%
+  - Степнова: 0.6%
+- Тексты в кластере:
+  - Abgaryan2_dalshe_zhit (Абгарян)
+  - Abgaryan2_molchaie (Абгарян)
+  - Abgaryan_Fantastychysi (Абгарян)
+  - Abgaryan_Jubileum (Абгарян)
+  - Abgaryan_Ponaekhavshaya (Абгарян)
+  - Akunin_Almaznaya kolesnitsa 1 (Акунин)
+  - Akunin_Almaznaya kolesnitsa 2 (Акунин)
+  - Akunin_Azazel (Акунин)
+  - Akunin_Grom Pobedy (Акунин)
+  - Akunin_Leviafan (Акунин)
+  - Akunin_Lubovnik smerti (Акунин)
+  - Akunin_Nefritovye chetki (Акунин)
+  - Akunin_Smert Ahillesa (Акунин)
+  - Akunin_Turetski gambit (Акунин)
+  - Akunin_World is theatre (Акунин)
+  - Aleshkovsky2_Disguise (Алешковский)
+  - Aleshkovsky2_Round Robin (Алешковский)
+  - Aleshkovsky_Hand (Алешковский)
+  - Aleshkovsky_Kengooroo (Алешковский)
+  - Aleshkovsky_Nik Nik (Алешковский)
+  - Belyaev2_jump to nowhere (Беляев)
+  - Belyaev2_Mr Laugh (Беляев)
+  - Belyaev2_rejecting (Беляев)
+  - Belyaev_airseller (Беляев)
+  - Belyaev_aquaman (Беляев)
+  - Belyaev_Ariell (Беляев)
+  - Belyaev_dowell (Беляев)
+  - Belyaev_island (Беляев)
+  - Belyaev_last man (Беляев)
+  - Belyaev_wonder eye (Беляев)
+  - BonchOsmolovskaya2_Christmas Romance (Бонч-Осмоловская)
+  - BonchOsmolovskaya2_One Day (Бонч-Осмоловская)
+  - BonchOsmolovskaya_Golden Runo (Бонч-Осмоловская)
+  - BonchOsmolovskaya_Southern Cross (Бонч-Осмоловская)
+  - Bushkov2_Darkness (Бушков)
+  - Bushkov2_Month of Hope (Бушков)
+  - Bushkov_Aastasia (Бушков)
+  - Bushkov_Svarog1 (Бушков)
+  - Bushkov_Svarog2 (Бушков)
+  - Bushkov_Svarog3 (Бушков)
+  - Bushkov_Svarog4 (Бушков)
+  - Bushkov_Svarog5 (Бушков)
+  - Bushkov_Toast4th (Бушков)
+  - Bykov2_Alpine Ballade (Быков)
+  - Bykov2_Front Page (Быков)
+  - Bykov2_His Batallion (Быков)
+  - Bykov2_Morning (Быков)
+  - Bykov2_Third Rocket (Быков)
+  - Bykov_Alive till Dusk (Быков)
+  - Bykov_No Return (Быков)
+  - Bykov_Quarry (Быков)
+  - Bykov_Sotnikov (Быков)
+  - Cherkasova_Nash-sad-Cherkasova-_1_Posmotri-nash-sad-pogibaet (Черкасова)
+  - Cherkasova_Nash-sad-Cherkasova-_2_Dozhdis-menya-v-nashem-sadu (Черкасова)
+  - Cherkasova_Zolotye-zemli_1_Sokol-i-Voron (Черкасова)
+  - Cherkasova_Zolotye-zemli_2_Sovinaya-bashnya (Черкасова)
+  - Cherkasova_Zolotye-zemli_3_Pticy-Velikogo-lesa (Черкасова)
+  - Cherkasova_Zolotye-zemli_6_Ego-zabral-les (Черкасова)
+  - Dombrowski2_Articles (Домбровский)
+  - Dombrowski2_Fire and Clay (Домбровский)
+  - Dombrowski2_Senders (Домбровский)
+  - Dombrowski_Faculty (Домбровский)
+  - Dombrowski_Hooligan (Домбровский)
+  - Dombrowski_Keeper (Домбровский)
+  - Dombrowski_Lady Makbet (Домбровский)
+  - Dombrowski_Novells about Shakespeer (Домбровский)
+  - Dostoevsky_Crime and Justice (Достоевский)
+  - Dostoevsky_Miserable (Достоевский)
+  - Dovlatov2_Compromiss (Довлатов)
+  - Dovlatov2_Solo on Underwood (Довлатов)
+  - Dovlatov_Grapes (Довлатов)
+  - Dovlatov_Introduction (Довлатов)
+  - Dovlatov_Life is short (Довлатов)
+  - Dovlatov_Literature Continnues (Довлатов)
+  - Dovlatov_Meet and Talk (Довлатов)
+  - Exler_Nevesta programmista (Экслер)
+  - Exler_Shashlyk (Экслер)
+  - Exler_Sochi stories (Экслер)
+  - Exler_Storog museya (Экслер)
+  - Gelb_Goyda (Гельб)
+  - Gelb_Pelikan (Гельб)
+  - Gelb_Proklyatie (Гельб)
+  - Gelb_Sbrod (Гельб)
+  - Granin_Escape to Russia (Гранин)
+  - Granin_idu na grozu (Гранин)
+  - Granin_It was not there (Гранин)
+  - Granin_Miloserdie (Гранин)
+  - Granin_Primechannie (Гранин)
+  - Granin_Tuman (Гранин)
+  - Grekova2_Hotel Owness (Грекова)
+  - Grekova2_In Carriage (Грекова)
+  - Grekova2_Without Smiles (Грекова)
+  - Grekova_Break (Грекова)
+  - Grekova_Chair (Грекова)
+  - Grekova_Fazan (Грекова)
+  - Grekova_Lady Master (Грекова)
+  - Grekova_Tests (Грекова)
+  - Hoffman_Krasnoe-bedstvie_1_Krasnoe-bedstvie (Хоффман)
+  - Hoffman_Lovec-Chudes (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_1_Vedmin-chas (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_2_Dvenadcat-dney-Kolyady (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_3_Probuzhdenie-Navi (Хоффман)
+  - Lermontov_Geroy-nashego-vremeni (Лермонтов)
+  - Lukyanenko_Month (Лукьяненко)
+  - Lukyanenko_Porog (Лукьяненко)
+  - Lukyanenko_Predel (Лукьяненко)
+  - Lukyanenko_Pryzhok (Лукьяненко)
+  - Lukyanenko_Seven days (Лукьяненко)
+  - Lukyanenko_Spektr (Лукьяненко)
+  - Lukyanenko_Three days (Лукьяненко)
+  - Lukyanenko_Triks Neposeda (Лукьяненко)
+  - Marinina_Game (Маринина)
+  - Marinina_Ghost of the music (Маринина)
+  - Marinina_Mask (Маринина)
+  - Marinina_Need to pay (Маринина)
+  - Marinina_Seventh victim (Маринина)
+  - Marinina_Shesterki umirayt (Маринина)
+  - Marinina_Smert radi smerti (Маринина)
+  - Marinina_Stecheie obstoyatelstv (Маринина)
+  - Marinina_Ubijtsa poevole (Маринина)
+  - Marinina_Ukradenny son (Маринина)
+  - Moshkov2_Owner (Мошков)
+  - Moshkov_Resident (Мошков)
+  - Moshkov_Vacation (Мошков)
+  - Moshkov_Victory1 (Мошков)
+  - Moshkov_Victory2 (Мошков)
+  - Preobrazhensky_7th element (Преображенский)
+  - Preobrazhensky_Another World (Преображенский)
+  - Preobrazhensky_Black cat (Преображенский)
+  - Preobrazhensky_Parasites (Преображенский)
+  - Prokofeva_Loskutik i oblako (Прокофьева)
+  - Prokofeva_Ostrov kapitanov (Прокофьева)
+  - Prokofeva_Poka byut chasy (Прокофьева)
+  - Prokofeva_Window (Прокофьева)
+  - Pushkin_Dubrovskiy (Пушкин)
+  - Pushkin_Kapitanskaya-dochka (Пушкин)
+  - Regentov_bridge (Регентов)
+  - Regentov_fog (Регентов)
+  - Regentov_north (Регентов)
+  - Regentov_parcel (Регентов)
+  - Regentov_spearman (Регентов)
+  - ShushpanovLouk_Nadzor (Шушпанов)
+  - Shushpanov_Dendrary (Шушпанов)
+  - Shushpanov_little boy (Шушпанов)
+  - Stepnova_Pisma Dikkensu (Степнова)
+  - Strugatskie2_Piknik (Стругацкие)
+  - Strugatskie_Be a God (Стругацкие)
+  - Strugatskie_Grad obrechenny (Стругацкие)
+  - Strugatskie_Habitual island (Стругацкие)
+  - Strugatskie_Hotel (Стругацкие)
+  - Strugatskie_Malysh (Стругацкие)
+  - Strugatskie_Monday starts (Стругацкие)
+  - Strugatskie_Stazhery (Стругацкие)
+  - Vlasova_Izbushka (Власова)
+  - Vlasova_Popadanka (Власова)
+  - Vlasova_Rok i kara (Власова)
+  - Voinovich2_Trust (Войнович)
+  - Voinovich_Fiction Marriage (Войнович)
+  - Voinovich_Friendly Circle (Войнович)
+  - Voinovich_Half Kilometer (Войнович)
+  - Voinovich_Owness (Войнович)
+
+##### Кластер 1
+- Размер: 40 текстов
+- Доминирующая группа: Толстой (22.5%)
+- Состав:
+  - Толстой: 22.5%
+  - Достоевский: 17.5%
+  - Макушинский: 15.0%
+  - Астафьев: 10.0%
+  - Лермонтов: 5.0%
+  - Сальников: 5.0%
+  - Степнова: 5.0%
+  - Стругацкие: 5.0%
+  - Абгарян: 2.5%
+  - Акунин: 2.5%
+  - Алешковский: 2.5%
+  - Бушков: 2.5%
+  - Экслер: 2.5%
+  - Войнович: 2.5%
+- Тексты в кластере:
+  - Abgaryan_3apples (Абгарян)
+  - Akunin_No West and East (Акунин)
+  - Aleshkovsky_Tea (Алешковский)
+  - Astafiev2_Jolly Soldger (Астафьев)
+  - Astafiev2_Parunia (Астафьев)
+  - Astafiev_Want to Live (Астафьев)
+  - Astafiev_Zatesi (Астафьев)
+  - Bushkov2_Ghost of the Golde Horde (Бушков)
+  - Dostoevsky_Besy (Достоевский)
+  - Dostoevsky_Idiaot (Достоевский)
+  - Dostoevsky_Karamazovy1 (Достоевский)
+  - Dostoevsky_Karamazovy2 (Достоевский)
+  - Dostoevsky_Karamazovy3 (Достоевский)
+  - Dostoevsky_Karamazovy4 (Достоевский)
+  - Dostoevsky_Player (Достоевский)
+  - Exler_Cyprus (Экслер)
+  - Lermontov_Knyaginya-Ligovskaya (Лермонтов)
+  - Lermontov_Vadim (Лермонтов)
+  - Makushinskiyi2_Pyramide (Макушинский)
+  - Makushinskiyi2_Walk (Макушинский)
+  - Makushinskiyi_Argentia (Макушинский)
+  - Makushinskiyi_City (Макушинский)
+  - Makushinskiyi_Maks (Макушинский)
+  - Makushinskiyi_World (Макушинский)
+  - Salnikov_Oposredovano (Сальников)
+  - Salnikov_Petrovy (Сальников)
+  - Stepnova_Khirurg (Степнова)
+  - Stepnova_rasskazy (Степнова)
+  - Strugatskie2_Bad Fate (Стругацкие)
+  - Strugatskie2_Hotel (Стругацкие)
+  - Tolstoy_Anna Karenina (Толстой)
+  - Tolstoy_Detstvo (Толстой)
+  - Tolstoy_Otrochestvo (Толстой)
+  - Tolstoy_Voskresenie (Толстой)
+  - Tolstoy_Voyna-i-mir-1 (Толстой)
+  - Tolstoy_Voyna-i-mir-2 (Толстой)
+  - Tolstoy_Voyna-i-mir-3 (Толстой)
+  - Tolstoy_Voyna-i-mir-4 (Толстой)
+  - Tolstoy_Yunost (Толстой)
+  - Voinovich_Open Letters (Войнович)
+
+### Результаты метода hierarchical
+
+#### Оценка кластеризации по author
+- Гомогенность: 0.1108
+- Полнота: 0.6725
+- Скорректированный индекс Рэнда: 0.0230
+
+#### Состав кластеров по author (hierarchical)
+
+##### Кластер 0
+- Размер: 50 текстов
+- Доминирующая группа: Достоевский (18.0%)
+- Состав:
+  - Достоевский: 18.0%
+  - Толстой: 18.0%
+  - Макушинский: 12.0%
+  - Астафьев: 8.0%
+  - Акунин: 6.0%
+  - Лермонтов: 6.0%
+  - Домбровский: 4.0%
+  - Гранин: 4.0%
+  - Сальников: 4.0%
+  - Степнова: 4.0%
+  - Стругацкие: 4.0%
+  - Абгарян: 2.0%
+  - Алешковский: 2.0%
+  - Бушков: 2.0%
+  - Экслер: 2.0%
+  - Пушкин: 2.0%
+  - Войнович: 2.0%
+- Тексты в кластере:
+  - Abgaryan_3apples (Абгарян)
+  - Akunin_Grom Pobedy (Акунин)
+  - Akunin_No West and East (Акунин)
+  - Akunin_World is theatre (Акунин)
+  - Aleshkovsky_Tea (Алешковский)
+  - Astafiev2_Jolly Soldger (Астафьев)
+  - Astafiev2_Parunia (Астафьев)
+  - Astafiev_Want to Live (Астафьев)
+  - Astafiev_Zatesi (Астафьев)
+  - Bushkov2_Ghost of the Golde Horde (Бушков)
+  - Dombrowski2_Articles (Домбровский)
+  - Dombrowski2_Senders (Домбровский)
+  - Dostoevsky_Besy (Достоевский)
+  - Dostoevsky_Crime and Justice (Достоевский)
+  - Dostoevsky_Idiaot (Достоевский)
+  - Dostoevsky_Karamazovy1 (Достоевский)
+  - Dostoevsky_Karamazovy2 (Достоевский)
+  - Dostoevsky_Karamazovy3 (Достоевский)
+  - Dostoevsky_Karamazovy4 (Достоевский)
+  - Dostoevsky_Miserable (Достоевский)
+  - Dostoevsky_Player (Достоевский)
+  - Exler_Cyprus (Экслер)
+  - Granin_Miloserdie (Гранин)
+  - Granin_Primechannie (Гранин)
+  - Lermontov_Geroy-nashego-vremeni (Лермонтов)
+  - Lermontov_Knyaginya-Ligovskaya (Лермонтов)
+  - Lermontov_Vadim (Лермонтов)
+  - Makushinskiyi2_Pyramide (Макушинский)
+  - Makushinskiyi2_Walk (Макушинский)
+  - Makushinskiyi_Argentia (Макушинский)
+  - Makushinskiyi_City (Макушинский)
+  - Makushinskiyi_Maks (Макушинский)
+  - Makushinskiyi_World (Макушинский)
+  - Pushkin_Dubrovskiy (Пушкин)
+  - Salnikov_Oposredovano (Сальников)
+  - Salnikov_Petrovy (Сальников)
+  - Stepnova_Khirurg (Степнова)
+  - Stepnova_rasskazy (Степнова)
+  - Strugatskie2_Bad Fate (Стругацкие)
+  - Strugatskie2_Hotel (Стругацкие)
+  - Tolstoy_Anna Karenina (Толстой)
+  - Tolstoy_Detstvo (Толстой)
+  - Tolstoy_Otrochestvo (Толстой)
+  - Tolstoy_Voskresenie (Толстой)
+  - Tolstoy_Voyna-i-mir-1 (Толстой)
+  - Tolstoy_Voyna-i-mir-2 (Толстой)
+  - Tolstoy_Voyna-i-mir-3 (Толстой)
+  - Tolstoy_Voyna-i-mir-4 (Толстой)
+  - Tolstoy_Yunost (Толстой)
+  - Voinovich_Open Letters (Войнович)
+
+##### Кластер 1
+- Размер: 151 текстов
+- Доминирующая группа: Беляев (6.6%)
+- Состав:
+  - Беляев: 6.6%
+  - Маринина: 6.6%
+  - Бушков: 6.0%
+  - Быков: 6.0%
+  - Акунин: 5.3%
+  - Грекова: 5.3%
+  - Лукьяненко: 5.3%
+  - Стругацкие: 5.3%
+  - Довлатов: 4.6%
+  - Черкасова: 4.0%
+  - Домбровский: 4.0%
+  - Абгарян: 3.3%
+  - Алешковский: 3.3%
+  - Хоффман: 3.3%
+  - Мошков: 3.3%
+  - Регентов: 3.3%
+  - Войнович: 3.3%
+  - Бонч-Осмоловская: 2.6%
+  - Экслер: 2.6%
+  - Гельб: 2.6%
+  - Гранин: 2.6%
+  - Преображенский: 2.6%
+  - Прокофьева: 2.6%
+  - Шушпанов: 2.0%
+  - Власова: 2.0%
+  - Пушкин: 0.7%
+  - Степнова: 0.7%
+- Тексты в кластере:
+  - Abgaryan2_dalshe_zhit (Абгарян)
+  - Abgaryan2_molchaie (Абгарян)
+  - Abgaryan_Fantastychysi (Абгарян)
+  - Abgaryan_Jubileum (Абгарян)
+  - Abgaryan_Ponaekhavshaya (Абгарян)
+  - Akunin_Almaznaya kolesnitsa 1 (Акунин)
+  - Akunin_Almaznaya kolesnitsa 2 (Акунин)
+  - Akunin_Azazel (Акунин)
+  - Akunin_Leviafan (Акунин)
+  - Akunin_Lubovnik smerti (Акунин)
+  - Akunin_Nefritovye chetki (Акунин)
+  - Akunin_Smert Ahillesa (Акунин)
+  - Akunin_Turetski gambit (Акунин)
+  - Aleshkovsky2_Disguise (Алешковский)
+  - Aleshkovsky2_Round Robin (Алешковский)
+  - Aleshkovsky_Hand (Алешковский)
+  - Aleshkovsky_Kengooroo (Алешковский)
+  - Aleshkovsky_Nik Nik (Алешковский)
+  - Belyaev2_jump to nowhere (Беляев)
+  - Belyaev2_Mr Laugh (Беляев)
+  - Belyaev2_rejecting (Беляев)
+  - Belyaev_airseller (Беляев)
+  - Belyaev_aquaman (Беляев)
+  - Belyaev_Ariell (Беляев)
+  - Belyaev_dowell (Беляев)
+  - Belyaev_island (Беляев)
+  - Belyaev_last man (Беляев)
+  - Belyaev_wonder eye (Беляев)
+  - BonchOsmolovskaya2_Christmas Romance (Бонч-Осмоловская)
+  - BonchOsmolovskaya2_One Day (Бонч-Осмоловская)
+  - BonchOsmolovskaya_Golden Runo (Бонч-Осмоловская)
+  - BonchOsmolovskaya_Southern Cross (Бонч-Осмоловская)
+  - Bushkov2_Darkness (Бушков)
+  - Bushkov2_Month of Hope (Бушков)
+  - Bushkov_Aastasia (Бушков)
+  - Bushkov_Svarog1 (Бушков)
+  - Bushkov_Svarog2 (Бушков)
+  - Bushkov_Svarog3 (Бушков)
+  - Bushkov_Svarog4 (Бушков)
+  - Bushkov_Svarog5 (Бушков)
+  - Bushkov_Toast4th (Бушков)
+  - Bykov2_Alpine Ballade (Быков)
+  - Bykov2_Front Page (Быков)
+  - Bykov2_His Batallion (Быков)
+  - Bykov2_Morning (Быков)
+  - Bykov2_Third Rocket (Быков)
+  - Bykov_Alive till Dusk (Быков)
+  - Bykov_No Return (Быков)
+  - Bykov_Quarry (Быков)
+  - Bykov_Sotnikov (Быков)
+  - Cherkasova_Nash-sad-Cherkasova-_1_Posmotri-nash-sad-pogibaet (Черкасова)
+  - Cherkasova_Nash-sad-Cherkasova-_2_Dozhdis-menya-v-nashem-sadu (Черкасова)
+  - Cherkasova_Zolotye-zemli_1_Sokol-i-Voron (Черкасова)
+  - Cherkasova_Zolotye-zemli_2_Sovinaya-bashnya (Черкасова)
+  - Cherkasova_Zolotye-zemli_3_Pticy-Velikogo-lesa (Черкасова)
+  - Cherkasova_Zolotye-zemli_6_Ego-zabral-les (Черкасова)
+  - Dombrowski2_Fire and Clay (Домбровский)
+  - Dombrowski_Faculty (Домбровский)
+  - Dombrowski_Hooligan (Домбровский)
+  - Dombrowski_Keeper (Домбровский)
+  - Dombrowski_Lady Makbet (Домбровский)
+  - Dombrowski_Novells about Shakespeer (Домбровский)
+  - Dovlatov2_Compromiss (Довлатов)
+  - Dovlatov2_Solo on Underwood (Довлатов)
+  - Dovlatov_Grapes (Довлатов)
+  - Dovlatov_Introduction (Довлатов)
+  - Dovlatov_Life is short (Довлатов)
+  - Dovlatov_Literature Continnues (Довлатов)
+  - Dovlatov_Meet and Talk (Довлатов)
+  - Exler_Nevesta programmista (Экслер)
+  - Exler_Shashlyk (Экслер)
+  - Exler_Sochi stories (Экслер)
+  - Exler_Storog museya (Экслер)
+  - Gelb_Goyda (Гельб)
+  - Gelb_Pelikan (Гельб)
+  - Gelb_Proklyatie (Гельб)
+  - Gelb_Sbrod (Гельб)
+  - Granin_Escape to Russia (Гранин)
+  - Granin_idu na grozu (Гранин)
+  - Granin_It was not there (Гранин)
+  - Granin_Tuman (Гранин)
+  - Grekova2_Hotel Owness (Грекова)
+  - Grekova2_In Carriage (Грекова)
+  - Grekova2_Without Smiles (Грекова)
+  - Grekova_Break (Грекова)
+  - Grekova_Chair (Грекова)
+  - Grekova_Fazan (Грекова)
+  - Grekova_Lady Master (Грекова)
+  - Grekova_Tests (Грекова)
+  - Hoffman_Krasnoe-bedstvie_1_Krasnoe-bedstvie (Хоффман)
+  - Hoffman_Lovec-Chudes (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_1_Vedmin-chas (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_2_Dvenadcat-dney-Kolyady (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_3_Probuzhdenie-Navi (Хоффман)
+  - Lukyanenko_Month (Лукьяненко)
+  - Lukyanenko_Porog (Лукьяненко)
+  - Lukyanenko_Predel (Лукьяненко)
+  - Lukyanenko_Pryzhok (Лукьяненко)
+  - Lukyanenko_Seven days (Лукьяненко)
+  - Lukyanenko_Spektr (Лукьяненко)
+  - Lukyanenko_Three days (Лукьяненко)
+  - Lukyanenko_Triks Neposeda (Лукьяненко)
+  - Marinina_Game (Маринина)
+  - Marinina_Ghost of the music (Маринина)
+  - Marinina_Mask (Маринина)
+  - Marinina_Need to pay (Маринина)
+  - Marinina_Seventh victim (Маринина)
+  - Marinina_Shesterki umirayt (Маринина)
+  - Marinina_Smert radi smerti (Маринина)
+  - Marinina_Stecheie obstoyatelstv (Маринина)
+  - Marinina_Ubijtsa poevole (Маринина)
+  - Marinina_Ukradenny son (Маринина)
+  - Moshkov2_Owner (Мошков)
+  - Moshkov_Resident (Мошков)
+  - Moshkov_Vacation (Мошков)
+  - Moshkov_Victory1 (Мошков)
+  - Moshkov_Victory2 (Мошков)
+  - Preobrazhensky_7th element (Преображенский)
+  - Preobrazhensky_Another World (Преображенский)
+  - Preobrazhensky_Black cat (Преображенский)
+  - Preobrazhensky_Parasites (Преображенский)
+  - Prokofeva_Loskutik i oblako (Прокофьева)
+  - Prokofeva_Ostrov kapitanov (Прокофьева)
+  - Prokofeva_Poka byut chasy (Прокофьева)
+  - Prokofeva_Window (Прокофьева)
+  - Pushkin_Kapitanskaya-dochka (Пушкин)
+  - Regentov_bridge (Регентов)
+  - Regentov_fog (Регентов)
+  - Regentov_north (Регентов)
+  - Regentov_parcel (Регентов)
+  - Regentov_spearman (Регентов)
+  - ShushpanovLouk_Nadzor (Шушпанов)
+  - Shushpanov_Dendrary (Шушпанов)
+  - Shushpanov_little boy (Шушпанов)
+  - Stepnova_Pisma Dikkensu (Степнова)
+  - Strugatskie2_Piknik (Стругацкие)
+  - Strugatskie_Be a God (Стругацкие)
+  - Strugatskie_Grad obrechenny (Стругацкие)
+  - Strugatskie_Habitual island (Стругацкие)
+  - Strugatskie_Hotel (Стругацкие)
+  - Strugatskie_Malysh (Стругацкие)
+  - Strugatskie_Monday starts (Стругацкие)
+  - Strugatskie_Stazhery (Стругацкие)
+  - Vlasova_Izbushka (Власова)
+  - Vlasova_Popadanka (Власова)
+  - Vlasova_Rok i kara (Власова)
+  - Voinovich2_Trust (Войнович)
+  - Voinovich_Fiction Marriage (Войнович)
+  - Voinovich_Friendly Circle (Войнович)
+  - Voinovich_Half Kilometer (Войнович)
+  - Voinovich_Owness (Войнович)
+
+### 2.2 Сегменты по 100 предложений
+
+### Общая информация
+- Количество текстов: 201
+- Author: Абгарян, Акунин, Алешковский, Астафьев, Беляев, Бонч-Осмоловская, Бушков, Быков, Власова, Войнович, Гельб, Гранин, Грекова, Довлатов, Домбровский, Достоевский, Лермонтов, Лукьяненко, Макушинский, Маринина, Мошков, Преображенский, Прокофьева, Пушкин, Регентов, Сальников, Степнова, Стругацкие, Толстой, Хоффман, Черкасова, Шушпанов, Экслер
+- Количество кластеров (kmeans): 2
+- Количество кластеров (hierarchical): 2
+
+### Результаты метода kmeans
+
+#### Оценка кластеризации по author
+- Гомогенность: 0.1025
+- Полнота: 0.7197
+- Скорректированный индекс Рэнда: 0.0196
+
+#### Состав кластеров по author (kmeans)
+
+##### Кластер 0
+- Размер: 38 текстов
+- Доминирующая группа: Достоевский (21.1%)
+- Состав:
+  - Достоевский: 21.1%
+  - Толстой: 21.1%
+  - Макушинский: 15.8%
+  - Астафьев: 10.5%
+  - Лермонтов: 5.3%
+  - Сальников: 5.3%
+  - Степнова: 5.3%
+  - Абгарян: 2.6%
+  - Акунин: 2.6%
+  - Алешковский: 2.6%
+  - Бушков: 2.6%
+  - Экслер: 2.6%
+  - Войнович: 2.6%
+- Тексты в кластере:
+  - Abgaryan_3apples (Абгарян)
+  - Akunin_No West and East (Акунин)
+  - Aleshkovsky_Tea (Алешковский)
+  - Astafiev2_Jolly Soldger (Астафьев)
+  - Astafiev2_Parunia (Астафьев)
+  - Astafiev_Want to Live (Астафьев)
+  - Astafiev_Zatesi (Астафьев)
+  - Bushkov2_Ghost of the Golde Horde (Бушков)
+  - Dostoevsky_Besy (Достоевский)
+  - Dostoevsky_Crime and Justice (Достоевский)
+  - Dostoevsky_Idiaot (Достоевский)
+  - Dostoevsky_Karamazovy1 (Достоевский)
+  - Dostoevsky_Karamazovy2 (Достоевский)
+  - Dostoevsky_Karamazovy3 (Достоевский)
+  - Dostoevsky_Karamazovy4 (Достоевский)
+  - Dostoevsky_Player (Достоевский)
+  - Exler_Cyprus (Экслер)
+  - Lermontov_Knyaginya-Ligovskaya (Лермонтов)
+  - Lermontov_Vadim (Лермонтов)
+  - Makushinskiyi2_Pyramide (Макушинский)
+  - Makushinskiyi2_Walk (Макушинский)
+  - Makushinskiyi_Argentia (Макушинский)
+  - Makushinskiyi_City (Макушинский)
+  - Makushinskiyi_Maks (Макушинский)
+  - Makushinskiyi_World (Макушинский)
+  - Salnikov_Oposredovano (Сальников)
+  - Salnikov_Petrovy (Сальников)
+  - Stepnova_Khirurg (Степнова)
+  - Stepnova_rasskazy (Степнова)
+  - Tolstoy_Detstvo (Толстой)
+  - Tolstoy_Otrochestvo (Толстой)
+  - Tolstoy_Voskresenie (Толстой)
+  - Tolstoy_Voyna-i-mir-1 (Толстой)
+  - Tolstoy_Voyna-i-mir-2 (Толстой)
+  - Tolstoy_Voyna-i-mir-3 (Толстой)
+  - Tolstoy_Voyna-i-mir-4 (Толстой)
+  - Tolstoy_Yunost (Толстой)
+  - Voinovich_Half Kilometer (Войнович)
+
+##### Кластер 1
+- Размер: 163 текстов
+- Доминирующая группа: Акунин (6.1%)
+- Состав:
+  - Акунин: 6.1%
+  - Беляев: 6.1%
+  - Маринина: 6.1%
+  - Стругацкие: 6.1%
+  - Бушков: 5.5%
+  - Быков: 5.5%
+  - Домбровский: 4.9%
+  - Грекова: 4.9%
+  - Лукьяненко: 4.9%
+  - Довлатов: 4.3%
+  - Черкасова: 3.7%
+  - Гранин: 3.7%
+  - Абгарян: 3.1%
+  - Алешковский: 3.1%
+  - Хоффман: 3.1%
+  - Мошков: 3.1%
+  - Регентов: 3.1%
+  - Войнович: 3.1%
+  - Бонч-Осмоловская: 2.5%
+  - Экслер: 2.5%
+  - Гельб: 2.5%
+  - Преображенский: 2.5%
+  - Прокофьева: 2.5%
+  - Шушпанов: 1.8%
+  - Власова: 1.8%
+  - Пушкин: 1.2%
+  - Достоевский: 0.6%
+  - Лермонтов: 0.6%
+  - Степнова: 0.6%
+  - Толстой: 0.6%
+- Тексты в кластере:
+  - Abgaryan2_dalshe_zhit (Абгарян)
+  - Abgaryan2_molchaie (Абгарян)
+  - Abgaryan_Fantastychysi (Абгарян)
+  - Abgaryan_Jubileum (Абгарян)
+  - Abgaryan_Ponaekhavshaya (Абгарян)
+  - Akunin_Almaznaya kolesnitsa 1 (Акунин)
+  - Akunin_Almaznaya kolesnitsa 2 (Акунин)
+  - Akunin_Azazel (Акунин)
+  - Akunin_Grom Pobedy (Акунин)
+  - Akunin_Leviafan (Акунин)
+  - Akunin_Lubovnik smerti (Акунин)
+  - Akunin_Nefritovye chetki (Акунин)
+  - Akunin_Smert Ahillesa (Акунин)
+  - Akunin_Turetski gambit (Акунин)
+  - Akunin_World is theatre (Акунин)
+  - Aleshkovsky2_Disguise (Алешковский)
+  - Aleshkovsky2_Round Robin (Алешковский)
+  - Aleshkovsky_Hand (Алешковский)
+  - Aleshkovsky_Kengooroo (Алешковский)
+  - Aleshkovsky_Nik Nik (Алешковский)
+  - Belyaev2_jump to nowhere (Беляев)
+  - Belyaev2_Mr Laugh (Беляев)
+  - Belyaev2_rejecting (Беляев)
+  - Belyaev_airseller (Беляев)
+  - Belyaev_aquaman (Беляев)
+  - Belyaev_Ariell (Беляев)
+  - Belyaev_dowell (Беляев)
+  - Belyaev_island (Беляев)
+  - Belyaev_last man (Беляев)
+  - Belyaev_wonder eye (Беляев)
+  - BonchOsmolovskaya2_Christmas Romance (Бонч-Осмоловская)
+  - BonchOsmolovskaya2_One Day (Бонч-Осмоловская)
+  - BonchOsmolovskaya_Golden Runo (Бонч-Осмоловская)
+  - BonchOsmolovskaya_Southern Cross (Бонч-Осмоловская)
+  - Bushkov2_Darkness (Бушков)
+  - Bushkov2_Month of Hope (Бушков)
+  - Bushkov_Aastasia (Бушков)
+  - Bushkov_Svarog1 (Бушков)
+  - Bushkov_Svarog2 (Бушков)
+  - Bushkov_Svarog3 (Бушков)
+  - Bushkov_Svarog4 (Бушков)
+  - Bushkov_Svarog5 (Бушков)
+  - Bushkov_Toast4th (Бушков)
+  - Bykov2_Alpine Ballade (Быков)
+  - Bykov2_Front Page (Быков)
+  - Bykov2_His Batallion (Быков)
+  - Bykov2_Morning (Быков)
+  - Bykov2_Third Rocket (Быков)
+  - Bykov_Alive till Dusk (Быков)
+  - Bykov_No Return (Быков)
+  - Bykov_Quarry (Быков)
+  - Bykov_Sotnikov (Быков)
+  - Cherkasova_Nash-sad-Cherkasova-_1_Posmotri-nash-sad-pogibaet (Черкасова)
+  - Cherkasova_Nash-sad-Cherkasova-_2_Dozhdis-menya-v-nashem-sadu (Черкасова)
+  - Cherkasova_Zolotye-zemli_1_Sokol-i-Voron (Черкасова)
+  - Cherkasova_Zolotye-zemli_2_Sovinaya-bashnya (Черкасова)
+  - Cherkasova_Zolotye-zemli_3_Pticy-Velikogo-lesa (Черкасова)
+  - Cherkasova_Zolotye-zemli_6_Ego-zabral-les (Черкасова)
+  - Dombrowski2_Articles (Домбровский)
+  - Dombrowski2_Fire and Clay (Домбровский)
+  - Dombrowski2_Senders (Домбровский)
+  - Dombrowski_Faculty (Домбровский)
+  - Dombrowski_Hooligan (Домбровский)
+  - Dombrowski_Keeper (Домбровский)
+  - Dombrowski_Lady Makbet (Домбровский)
+  - Dombrowski_Novells about Shakespeer (Домбровский)
+  - Dostoevsky_Miserable (Достоевский)
+  - Dovlatov2_Compromiss (Довлатов)
+  - Dovlatov2_Solo on Underwood (Довлатов)
+  - Dovlatov_Grapes (Довлатов)
+  - Dovlatov_Introduction (Довлатов)
+  - Dovlatov_Life is short (Довлатов)
+  - Dovlatov_Literature Continnues (Довлатов)
+  - Dovlatov_Meet and Talk (Довлатов)
+  - Exler_Nevesta programmista (Экслер)
+  - Exler_Shashlyk (Экслер)
+  - Exler_Sochi stories (Экслер)
+  - Exler_Storog museya (Экслер)
+  - Gelb_Goyda (Гельб)
+  - Gelb_Pelikan (Гельб)
+  - Gelb_Proklyatie (Гельб)
+  - Gelb_Sbrod (Гельб)
+  - Granin_Escape to Russia (Гранин)
+  - Granin_idu na grozu (Гранин)
+  - Granin_It was not there (Гранин)
+  - Granin_Miloserdie (Гранин)
+  - Granin_Primechannie (Гранин)
+  - Granin_Tuman (Гранин)
+  - Grekova2_Hotel Owness (Грекова)
+  - Grekova2_In Carriage (Грекова)
+  - Grekova2_Without Smiles (Грекова)
+  - Grekova_Break (Грекова)
+  - Grekova_Chair (Грекова)
+  - Grekova_Fazan (Грекова)
+  - Grekova_Lady Master (Грекова)
+  - Grekova_Tests (Грекова)
+  - Hoffman_Krasnoe-bedstvie_1_Krasnoe-bedstvie (Хоффман)
+  - Hoffman_Lovec-Chudes (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_1_Vedmin-chas (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_2_Dvenadcat-dney-Kolyady (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_3_Probuzhdenie-Navi (Хоффман)
+  - Lermontov_Geroy-nashego-vremeni (Лермонтов)
+  - Lukyanenko_Month (Лукьяненко)
+  - Lukyanenko_Porog (Лукьяненко)
+  - Lukyanenko_Predel (Лукьяненко)
+  - Lukyanenko_Pryzhok (Лукьяненко)
+  - Lukyanenko_Seven days (Лукьяненко)
+  - Lukyanenko_Spektr (Лукьяненко)
+  - Lukyanenko_Three days (Лукьяненко)
+  - Lukyanenko_Triks Neposeda (Лукьяненко)
+  - Marinina_Game (Маринина)
+  - Marinina_Ghost of the music (Маринина)
+  - Marinina_Mask (Маринина)
+  - Marinina_Need to pay (Маринина)
+  - Marinina_Seventh victim (Маринина)
+  - Marinina_Shesterki umirayt (Маринина)
+  - Marinina_Smert radi smerti (Маринина)
+  - Marinina_Stecheie obstoyatelstv (Маринина)
+  - Marinina_Ubijtsa poevole (Маринина)
+  - Marinina_Ukradenny son (Маринина)
+  - Moshkov2_Owner (Мошков)
+  - Moshkov_Resident (Мошков)
+  - Moshkov_Vacation (Мошков)
+  - Moshkov_Victory1 (Мошков)
+  - Moshkov_Victory2 (Мошков)
+  - Preobrazhensky_7th element (Преображенский)
+  - Preobrazhensky_Another World (Преображенский)
+  - Preobrazhensky_Black cat (Преображенский)
+  - Preobrazhensky_Parasites (Преображенский)
+  - Prokofeva_Loskutik i oblako (Прокофьева)
+  - Prokofeva_Ostrov kapitanov (Прокофьева)
+  - Prokofeva_Poka byut chasy (Прокофьева)
+  - Prokofeva_Window (Прокофьева)
+  - Pushkin_Dubrovskiy (Пушкин)
+  - Pushkin_Kapitanskaya-dochka (Пушкин)
+  - Regentov_bridge (Регентов)
+  - Regentov_fog (Регентов)
+  - Regentov_north (Регентов)
+  - Regentov_parcel (Регентов)
+  - Regentov_spearman (Регентов)
+  - ShushpanovLouk_Nadzor (Шушпанов)
+  - Shushpanov_Dendrary (Шушпанов)
+  - Shushpanov_little boy (Шушпанов)
+  - Stepnova_Pisma Dikkensu (Степнова)
+  - Strugatskie2_Bad Fate (Стругацкие)
+  - Strugatskie2_Hotel (Стругацкие)
+  - Strugatskie2_Piknik (Стругацкие)
+  - Strugatskie_Be a God (Стругацкие)
+  - Strugatskie_Grad obrechenny (Стругацкие)
+  - Strugatskie_Habitual island (Стругацкие)
+  - Strugatskie_Hotel (Стругацкие)
+  - Strugatskie_Malysh (Стругацкие)
+  - Strugatskie_Monday starts (Стругацкие)
+  - Strugatskie_Stazhery (Стругацкие)
+  - Tolstoy_Anna Karenina (Толстой)
+  - Vlasova_Izbushka (Власова)
+  - Vlasova_Popadanka (Власова)
+  - Vlasova_Rok i kara (Власова)
+  - Voinovich2_Trust (Войнович)
+  - Voinovich_Fiction Marriage (Войнович)
+  - Voinovich_Friendly Circle (Войнович)
+  - Voinovich_Open Letters (Войнович)
+  - Voinovich_Owness (Войнович)
+
+### Результаты метода hierarchical
+
+#### Оценка кластеризации по author
+- Гомогенность: 0.1127
+- Полнота: 0.7486
+- Скорректированный индекс Рэнда: 0.0234
+
+#### Состав кластеров по author (hierarchical)
+
+##### Кластер 0
+- Размер: 42 текстов
+- Доминирующая группа: Достоевский (21.4%)
+- Состав:
+  - Достоевский: 21.4%
+  - Толстой: 19.0%
+  - Макушинский: 14.3%
+  - Астафьев: 9.5%
+  - Лермонтов: 7.1%
+  - Сальников: 4.8%
+  - Степнова: 4.8%
+  - Абгарян: 2.4%
+  - Акунин: 2.4%
+  - Алешковский: 2.4%
+  - Бонч-Осмоловская: 2.4%
+  - Бушков: 2.4%
+  - Экслер: 2.4%
+  - Пушкин: 2.4%
+  - Войнович: 2.4%
+- Тексты в кластере:
+  - Abgaryan_3apples (Абгарян)
+  - Akunin_No West and East (Акунин)
+  - Aleshkovsky_Tea (Алешковский)
+  - Astafiev2_Jolly Soldger (Астафьев)
+  - Astafiev2_Parunia (Астафьев)
+  - Astafiev_Want to Live (Астафьев)
+  - Astafiev_Zatesi (Астафьев)
+  - BonchOsmolovskaya2_Christmas Romance (Бонч-Осмоловская)
+  - Bushkov2_Ghost of the Golde Horde (Бушков)
+  - Dostoevsky_Besy (Достоевский)
+  - Dostoevsky_Crime and Justice (Достоевский)
+  - Dostoevsky_Idiaot (Достоевский)
+  - Dostoevsky_Karamazovy1 (Достоевский)
+  - Dostoevsky_Karamazovy2 (Достоевский)
+  - Dostoevsky_Karamazovy3 (Достоевский)
+  - Dostoevsky_Karamazovy4 (Достоевский)
+  - Dostoevsky_Miserable (Достоевский)
+  - Dostoevsky_Player (Достоевский)
+  - Exler_Cyprus (Экслер)
+  - Lermontov_Geroy-nashego-vremeni (Лермонтов)
+  - Lermontov_Knyaginya-Ligovskaya (Лермонтов)
+  - Lermontov_Vadim (Лермонтов)
+  - Makushinskiyi2_Pyramide (Макушинский)
+  - Makushinskiyi2_Walk (Макушинский)
+  - Makushinskiyi_Argentia (Макушинский)
+  - Makushinskiyi_City (Макушинский)
+  - Makushinskiyi_Maks (Макушинский)
+  - Makushinskiyi_World (Макушинский)
+  - Pushkin_Dubrovskiy (Пушкин)
+  - Salnikov_Oposredovano (Сальников)
+  - Salnikov_Petrovy (Сальников)
+  - Stepnova_Khirurg (Степнова)
+  - Stepnova_rasskazy (Степнова)
+  - Tolstoy_Detstvo (Толстой)
+  - Tolstoy_Otrochestvo (Толстой)
+  - Tolstoy_Voskresenie (Толстой)
+  - Tolstoy_Voyna-i-mir-1 (Толстой)
+  - Tolstoy_Voyna-i-mir-2 (Толстой)
+  - Tolstoy_Voyna-i-mir-3 (Толстой)
+  - Tolstoy_Voyna-i-mir-4 (Толстой)
+  - Tolstoy_Yunost (Толстой)
+  - Voinovich_Half Kilometer (Войнович)
+
+##### Кластер 1
+- Размер: 159 текстов
+- Доминирующая группа: Акунин (6.3%)
+- Состав:
+  - Акунин: 6.3%
+  - Беляев: 6.3%
+  - Маринина: 6.3%
+  - Стругацкие: 6.3%
+  - Бушков: 5.7%
+  - Быков: 5.7%
+  - Домбровский: 5.0%
+  - Грекова: 5.0%
+  - Лукьяненко: 5.0%
+  - Довлатов: 4.4%
+  - Черкасова: 3.8%
+  - Гранин: 3.8%
+  - Абгарян: 3.1%
+  - Алешковский: 3.1%
+  - Хоффман: 3.1%
+  - Мошков: 3.1%
+  - Регентов: 3.1%
+  - Войнович: 3.1%
+  - Экслер: 2.5%
+  - Гельб: 2.5%
+  - Преображенский: 2.5%
+  - Прокофьева: 2.5%
+  - Бонч-Осмоловская: 1.9%
+  - Шушпанов: 1.9%
+  - Власова: 1.9%
+  - Пушкин: 0.6%
+  - Степнова: 0.6%
+  - Толстой: 0.6%
+- Тексты в кластере:
+  - Abgaryan2_dalshe_zhit (Абгарян)
+  - Abgaryan2_molchaie (Абгарян)
+  - Abgaryan_Fantastychysi (Абгарян)
+  - Abgaryan_Jubileum (Абгарян)
+  - Abgaryan_Ponaekhavshaya (Абгарян)
+  - Akunin_Almaznaya kolesnitsa 1 (Акунин)
+  - Akunin_Almaznaya kolesnitsa 2 (Акунин)
+  - Akunin_Azazel (Акунин)
+  - Akunin_Grom Pobedy (Акунин)
+  - Akunin_Leviafan (Акунин)
+  - Akunin_Lubovnik smerti (Акунин)
+  - Akunin_Nefritovye chetki (Акунин)
+  - Akunin_Smert Ahillesa (Акунин)
+  - Akunin_Turetski gambit (Акунин)
+  - Akunin_World is theatre (Акунин)
+  - Aleshkovsky2_Disguise (Алешковский)
+  - Aleshkovsky2_Round Robin (Алешковский)
+  - Aleshkovsky_Hand (Алешковский)
+  - Aleshkovsky_Kengooroo (Алешковский)
+  - Aleshkovsky_Nik Nik (Алешковский)
+  - Belyaev2_jump to nowhere (Беляев)
+  - Belyaev2_Mr Laugh (Беляев)
+  - Belyaev2_rejecting (Беляев)
+  - Belyaev_airseller (Беляев)
+  - Belyaev_aquaman (Беляев)
+  - Belyaev_Ariell (Беляев)
+  - Belyaev_dowell (Беляев)
+  - Belyaev_island (Беляев)
+  - Belyaev_last man (Беляев)
+  - Belyaev_wonder eye (Беляев)
+  - BonchOsmolovskaya2_One Day (Бонч-Осмоловская)
+  - BonchOsmolovskaya_Golden Runo (Бонч-Осмоловская)
+  - BonchOsmolovskaya_Southern Cross (Бонч-Осмоловская)
+  - Bushkov2_Darkness (Бушков)
+  - Bushkov2_Month of Hope (Бушков)
+  - Bushkov_Aastasia (Бушков)
+  - Bushkov_Svarog1 (Бушков)
+  - Bushkov_Svarog2 (Бушков)
+  - Bushkov_Svarog3 (Бушков)
+  - Bushkov_Svarog4 (Бушков)
+  - Bushkov_Svarog5 (Бушков)
+  - Bushkov_Toast4th (Бушков)
+  - Bykov2_Alpine Ballade (Быков)
+  - Bykov2_Front Page (Быков)
+  - Bykov2_His Batallion (Быков)
+  - Bykov2_Morning (Быков)
+  - Bykov2_Third Rocket (Быков)
+  - Bykov_Alive till Dusk (Быков)
+  - Bykov_No Return (Быков)
+  - Bykov_Quarry (Быков)
+  - Bykov_Sotnikov (Быков)
+  - Cherkasova_Nash-sad-Cherkasova-_1_Posmotri-nash-sad-pogibaet (Черкасова)
+  - Cherkasova_Nash-sad-Cherkasova-_2_Dozhdis-menya-v-nashem-sadu (Черкасова)
+  - Cherkasova_Zolotye-zemli_1_Sokol-i-Voron (Черкасова)
+  - Cherkasova_Zolotye-zemli_2_Sovinaya-bashnya (Черкасова)
+  - Cherkasova_Zolotye-zemli_3_Pticy-Velikogo-lesa (Черкасова)
+  - Cherkasova_Zolotye-zemli_6_Ego-zabral-les (Черкасова)
+  - Dombrowski2_Articles (Домбровский)
+  - Dombrowski2_Fire and Clay (Домбровский)
+  - Dombrowski2_Senders (Домбровский)
+  - Dombrowski_Faculty (Домбровский)
+  - Dombrowski_Hooligan (Домбровский)
+  - Dombrowski_Keeper (Домбровский)
+  - Dombrowski_Lady Makbet (Домбровский)
+  - Dombrowski_Novells about Shakespeer (Домбровский)
+  - Dovlatov2_Compromiss (Довлатов)
+  - Dovlatov2_Solo on Underwood (Довлатов)
+  - Dovlatov_Grapes (Довлатов)
+  - Dovlatov_Introduction (Довлатов)
+  - Dovlatov_Life is short (Довлатов)
+  - Dovlatov_Literature Continnues (Довлатов)
+  - Dovlatov_Meet and Talk (Довлатов)
+  - Exler_Nevesta programmista (Экслер)
+  - Exler_Shashlyk (Экслер)
+  - Exler_Sochi stories (Экслер)
+  - Exler_Storog museya (Экслер)
+  - Gelb_Goyda (Гельб)
+  - Gelb_Pelikan (Гельб)
+  - Gelb_Proklyatie (Гельб)
+  - Gelb_Sbrod (Гельб)
+  - Granin_Escape to Russia (Гранин)
+  - Granin_idu na grozu (Гранин)
+  - Granin_It was not there (Гранин)
+  - Granin_Miloserdie (Гранин)
+  - Granin_Primechannie (Гранин)
+  - Granin_Tuman (Гранин)
+  - Grekova2_Hotel Owness (Грекова)
+  - Grekova2_In Carriage (Грекова)
+  - Grekova2_Without Smiles (Грекова)
+  - Grekova_Break (Грекова)
+  - Grekova_Chair (Грекова)
+  - Grekova_Fazan (Грекова)
+  - Grekova_Lady Master (Грекова)
+  - Grekova_Tests (Грекова)
+  - Hoffman_Krasnoe-bedstvie_1_Krasnoe-bedstvie (Хоффман)
+  - Hoffman_Lovec-Chudes (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_1_Vedmin-chas (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_2_Dvenadcat-dney-Kolyady (Хоффман)
+  - Hoffman_Mrachnyy-Vzvod_3_Probuzhdenie-Navi (Хоффман)
+  - Lukyanenko_Month (Лукьяненко)
+  - Lukyanenko_Porog (Лукьяненко)
+  - Lukyanenko_Predel (Лукьяненко)
+  - Lukyanenko_Pryzhok (Лукьяненко)
+  - Lukyanenko_Seven days (Лукьяненко)
+  - Lukyanenko_Spektr (Лукьяненко)
+  - Lukyanenko_Three days (Лукьяненко)
+  - Lukyanenko_Triks Neposeda (Лукьяненко)
+  - Marinina_Game (Маринина)
+  - Marinina_Ghost of the music (Маринина)
+  - Marinina_Mask (Маринина)
+  - Marinina_Need to pay (Маринина)
+  - Marinina_Seventh victim (Маринина)
+  - Marinina_Shesterki umirayt (Маринина)
+  - Marinina_Smert radi smerti (Маринина)
+  - Marinina_Stecheie obstoyatelstv (Маринина)
+  - Marinina_Ubijtsa poevole (Маринина)
+  - Marinina_Ukradenny son (Маринина)
+  - Moshkov2_Owner (Мошков)
+  - Moshkov_Resident (Мошков)
+  - Moshkov_Vacation (Мошков)
+  - Moshkov_Victory1 (Мошков)
+  - Moshkov_Victory2 (Мошков)
+  - Preobrazhensky_7th element (Преображенский)
+  - Preobrazhensky_Another World (Преображенский)
+  - Preobrazhensky_Black cat (Преображенский)
+  - Preobrazhensky_Parasites (Преображенский)
+  - Prokofeva_Loskutik i oblako (Прокофьева)
+  - Prokofeva_Ostrov kapitanov (Прокофьева)
+  - Prokofeva_Poka byut chasy (Прокофьева)
+  - Prokofeva_Window (Прокофьева)
+  - Pushkin_Kapitanskaya-dochka (Пушкин)
+  - Regentov_bridge (Регентов)
+  - Regentov_fog (Регентов)
+  - Regentov_north (Регентов)
+  - Regentov_parcel (Регентов)
+  - Regentov_spearman (Регентов)
+  - ShushpanovLouk_Nadzor (Шушпанов)
+  - Shushpanov_Dendrary (Шушпанов)
+  - Shushpanov_little boy (Шушпанов)
+  - Stepnova_Pisma Dikkensu (Степнова)
+  - Strugatskie2_Bad Fate (Стругацкие)
+  - Strugatskie2_Hotel (Стругацкие)
+  - Strugatskie2_Piknik (Стругацкие)
+  - Strugatskie_Be a God (Стругацкие)
+  - Strugatskie_Grad obrechenny (Стругацкие)
+  - Strugatskie_Habitual island (Стругацкие)
+  - Strugatskie_Hotel (Стругацкие)
+  - Strugatskie_Malysh (Стругацкие)
+  - Strugatskie_Monday starts (Стругацкие)
+  - Strugatskie_Stazhery (Стругацкие)
+  - Tolstoy_Anna Karenina (Толстой)
+  - Vlasova_Izbushka (Власова)
+  - Vlasova_Popadanka (Власова)
+  - Vlasova_Rok i kara (Власова)
+  - Voinovich2_Trust (Войнович)
+  - Voinovich_Fiction Marriage (Войнович)
+  - Voinovich_Friendly Circle (Войнович)
+  - Voinovich_Open Letters (Войнович)
+  - Voinovich_Owness (Войнович)
+
+## 3. Сравнение по размерам сегментов
+
+### Качество кластеризации
+
+#### Метод: kmeans
+
+##### Группировка по author
+| Метрика | Сегменты по 10 предложений | Сегменты по 100 предложений | Разница |
+| --- | --- | --- | --- |
+| Гомогенность | 0.1016 | 0.1025 | +0.0009 |
+| Полнота | 0.6929 | 0.7197 | +0.0269 |
+| Скорректированный индекс Рэнда | 0.0189 | 0.0196 | +0.0006 |
+
+#### Метод: hierarchical
+
+##### Группировка по author
+| Метрика | Сегменты по 10 предложений | Сегменты по 100 предложений | Разница |
+| --- | --- | --- | --- |
+| Гомогенность | 0.1108 | 0.1127 | +0.0019 |
+| Полнота | 0.6725 | 0.7486 | +0.0761 |
+| Скорректированный индекс Рэнда | 0.0230 | 0.0234 | +0.0004 |
+
+### Общее заключение
+По большинству метрик сегменты размером 100 предложений дают лучшие результаты кластеризации. (Метрики лучше для сегментов по 100 предложений: 3, для сегментов по 10 предложений: 0, равны: 3)
+
+#### Выводы о влиянии размера сегмента на кластеризацию
+1. **Детализация анализа**: Сегменты по 100 предложений лучше отражают общий стиль текста, что позволяет точнее определять авторство на макроуровне.
+
+2. **Стабильность метрик**: Стабильность метрик между разными размерами сегментов указывает на устойчивость авторского стиля и возможность его надежной идентификации.
+
+3. **Рекомендации для будущих исследований**: Для комплексного анализа рекомендуется использовать оба размера сегментов, что позволит получить как детальный, так и обобщенный взгляд на стилистические особенности текстов.
+
+## 4. Выводы
+
+- Стилистические метрики позволяют получить слабую, но значимую группировку текстов по авторам.
+- Иерархическая кластеризация немного превосходит K-means.
+- Сегменты по 100 предложений дают лучшие результаты по всем метрикам.
+- Рекомендуется использовать оба размера сегментов для разностороннего анализа.
